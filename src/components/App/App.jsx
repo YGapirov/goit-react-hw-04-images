@@ -16,10 +16,10 @@ export const App = () => {
   const [error, setError] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
 
-  //  if (prevState.query !== query || prevState.page !== page)
-  //вирішити питання з умовою
-
   useEffect(() => {
+    if (!query) {
+      return;
+    }
     async function getPages() {
       try {
         setIsLoading(true);
